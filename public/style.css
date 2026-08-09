@@ -1,0 +1,13 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.text-body {
+  font-size: 16px;
+  font-family: serif;
+  color: #00ff00;
+  text-align: center;
+}
