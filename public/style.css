@@ -6,15 +6,20 @@ body {
   padding: 0;
   margin: 0;
   height: 100svh;
+  width: 100svw;
   overflow: hidden;
   font-family: serif;
   color: #000;
   line-height: 1;
   background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
 }
 
 main {
-  width: 100%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -72,4 +77,33 @@ main {
   margin: 0;
   opacity: 0;
   cursor: pointer;
+}
+
+.win-gif {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 33svw;
+  height: auto;
+  pointer-events: none;
+  display: none;
+}
+
+body:has(.answer.hyper input:checked):has(.answer.text input:checked):has(.answer.markup input:checked):has(.answer.language input:checked) {
+  animation: flash-green 0.2s ease infinite alternate;
+}
+
+body:has(.answer.hyper input:checked):has(.answer.text input:checked):has(.answer.markup input:checked):has(.answer.language input:checked) .win-gif {
+  display: block;
+}
+
+@keyframes flash-green {
+  from {
+    background-color: #fff;
+  }
+  to {
+    background-color: #00ff00;
+  }
 }
