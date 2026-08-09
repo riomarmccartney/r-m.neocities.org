@@ -6,7 +6,7 @@ body {
   box-sizing: border-box;
   font-family: serif;
   color: #000;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -25,4 +25,9 @@ main {
   flex-direction: row;
   justify-content: space-around;
   text-wrap: balance;
+}
+
+.html-text span {
+  min-width: 0;
+  text-align: center;
 }
