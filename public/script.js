@@ -542,19 +542,36 @@ function shuffle() {
     words[1].textContent = 'text'
     words[2].textContent = 'markup'
     words[3].textContent = 'language'
+    flashGreen()
     return
   }
 
   words.forEach((el, i) => {
     el.textContent = pick(lists[i])
   })
+
+  if (
+    words[0].textContent === 'hyper' &&
+    words[1].textContent === 'text' &&
+    words[2].textContent === 'markup' &&
+    words[3].textContent === 'language'
+  ) {
+    flashGreen()
+  }
+}
+
+function flashGreen() {
+  document.body.classList.remove('flash-green')
+  // reflow so the animation can restart if it hits again quickly
+  void document.body.offsetWidth
+  document.body.classList.add('flash-green')
 }
 
 let timer = null
 
 function start() {
   shuffle()
-  timer = setInterval(shuffle, 1000 / 60)
+  timer = setInterval(shuffle, 1000 / 25)
   button.textContent = 'Stop!'
 }
 
