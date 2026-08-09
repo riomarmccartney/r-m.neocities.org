@@ -15,6 +15,6 @@ jobs:
     - name: Deploy to Neocities
       uses: bcomnes/deploy-to-neocities@v1
       with:
-        api_key: ${{ secrets.NEOCITIES_API_TOKEN }}
-        dist_dir: 'public' # Deploys only the contents of the public folder
-        cleanup: false # Change to true to delete Neocities files not in your public folder
+        api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+        dist_dir: 'public'
+        cleanup: false 
